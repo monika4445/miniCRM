@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./minicrm.db:/app/minicrm.db
+    environment:
+      - PYTHONUNBUFFERED=1
