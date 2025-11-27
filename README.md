@@ -391,8 +391,6 @@ Alternative considered: Deterministic round-robin with weight tracking. This was
 - Pros: All requests are tracked; can analyze capacity issues; can manually assign later
 - Cons: Requires monitoring for unassigned requests
 
-Alternative: Return 4xx error. This would make failures visible immediately but lose request data.
-
 ### 4. Lead Identification
 Uses `external_id` as the unique identifier:
 - Allows integration with external systems
@@ -422,25 +420,3 @@ Uses `external_id` as the unique identifier:
 2. Create request from source A: should assign operator
 3. Create request from source B: should NOT assign operator
 
-## Future Enhancements
-
-If extended beyond 1-2 hours, consider:
-
-1. **Authentication & Authorization**: Protect API endpoints
-2. **Database Migrations**: Use Alembic for schema versioning
-3. **Comprehensive Tests**: Unit tests for distribution logic, integration tests for API
-4. **Async SQLAlchemy**: For better performance under high load
-5. **Redis Caching**: Cache operator availability for faster assignment
-6. **Webhooks**: Notify external systems of request assignments
-7. **Advanced Analytics**: Dashboard for request trends, operator performance
-8. **Request Priority**: High-priority requests could override weight distribution
-9. **Time-based Routing**: Different weights by time of day/day of week
-10. **Operator Skills**: Match requests to operators by skill tags
-
-## License
-
-This is a test assignment project.
-
-## Contact
-
-For questions or clarifications, please contact the development team.
